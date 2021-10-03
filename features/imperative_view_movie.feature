@@ -15,5 +15,5 @@ Scenario: view movie list after adding 2 movies (imperative and non-DRY)
   And I select "R" from "Rating"
   And I press "Save Changes"
   Then I should be on the RottenPotatoes home page
-  when I follow "Movie Title"
+  When I follow "Movie Title"
   Then I should see "Apocalypse Now" before "Zorro"
