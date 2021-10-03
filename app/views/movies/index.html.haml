@@ -1,0 +1,29 @@
+
+%h1 Search TMDB for a movie
+
+= form_tag movies_search_tmdb_path, :method => :get do
+	%label Search Terms
+	= text_field_tag 'search_tmdb'
+	= submit_tag 'Search TMDb'
+
+
+%h1 All Movies
+
+%table#movies
+	%thead
+		%tr
+			%th NO.
+			%th Movie Title
+			%th Rating
+			%th Release Date
+			%th More Info
+	%tbody
+		- @movies.each_with_index do |movie, index|
+			%tr
+				%td= index+1
+				%td= movie.title 
+				%td= movie.rating
+				%td= movie.release_date.strftime('%d-%b-%Y')
+				%td= link_to "More about this", movie_path(movie)
+
+= link_to 'Add new movie', new_movie_path

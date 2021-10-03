@@ -1,0 +1,25 @@
+%h2 Details about #{@movie.title}
+
+%ul#details
+  %li
+    Rating:
+    = @movie.rating
+  %li
+    Released on:
+    = @movie.release_date.strftime("%d-%b-%Y")
+
+%h3 Description:
+
+%p#description= @movie.description
+
+%br
+= link_to 'Edit Info', edit_movie_path(@movie)
+%br
+= link_to 'Delete', movie_path(@movie), :method => :delete
+%br
+= link_to 'Back to movie list', movies_path
+%br
+= link_to 'Show up All Reviews', movie_reviews_path(@movie)
+%br
+
+= link_to 'Show up Your Review', movie_review_path(@movie, @review) if not @review.nil?

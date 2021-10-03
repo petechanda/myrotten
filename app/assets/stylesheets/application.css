@@ -1,0 +1,133 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html, body {
+  margin: 10px;
+  padding: 5px;
+  background: White;
+  color: DarkSlateGrey;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 10pt;
+}
+div#main {
+  margin: 0;
+  padding: 0 20px 20px;
+}
+a {
+  background: transparent;
+  color: maroon;
+  text-decoration: underline;
+  font-weight: bold;
+}
+h1 {
+  color: maroon;
+  font-size: 150%;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid DarkSlateGrey;
+}
+h1.headerer a {
+  font-size: 36pt;
+  font-style: normal;
+  color: red;
+  text-decoration: none;
+}
+h1.headerer a:hover {
+  color: black;
+  background-color: yellow;
+}
+table#movies {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+table#movies th {
+  border: 2px solid white;
+  font-weight: bold;
+  background-color: wheat;
+}
+table#movies th, table#movies td {
+  padding: 4px;
+  text-align: left;
+}
+tr:hover {
+  background-color: yellow;
+}
+#notice, #warning {
+  background: rosybrown;
+  margin: 1em 0;
+  padding: 4px;
+  color: red;
+  text-align: center;
+}
+form label {
+  display: block;
+  line-height: 25px;
+  font-weight: bold;
+  color: maroon;
+}
+br {
+  margin: 10px 10px;
+}
+#login {
+  text-align: right;
+}
+
+div.container {
+  display: flex;
+}
+div.left, div.right {
+  width: 50%;
+  height: 50%;
+}
+p.comments {
+  margin: 5px;
+  padding: 5px;
+  background-color: #dbd9d9;
+  border-radius: 5px;
+  font-size: 12pt;
+}
+p.username {
+  text-align: right;
+  font-style: italic;
+}
+
+
+div.tmdb-card {
+  display: grid;
+  margin: 10px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  background-color: #dbd9d9;
+  grid-gap: 5px;
+  grid-template-columns: 150px auto;
+  max-width: fit-content;
+  max-height: auto;
+}
+div.tmdb-poster {
+  grid-row: 1 / 5;
+}
+img.tmdb-poster {
+  width: 150px;
+  height: auto;
+}
+.tmdb-title, .tmdb-rl-date, .tmdb-description, .tmdb-add-in-db {
+  padding: 0 0 0 15px;
+}
+p.tmdb-title {
+  font-size: 16pt;
+}

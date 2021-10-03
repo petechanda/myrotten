@@ -1,0 +1,19 @@
+%h1 TMDB search for "#{@search_tmdb}"
+
+%div.tmdb-container
+
+	- @movies.each do |tmdb_mv|
+		%div.tmdb-card
+			%div.tmdb-poster
+				%img.tmdb-poster{:src => 'https://image.tmdb.org/t/p/w300' + tmdb_mv.poster_path.to_s}
+			%div.tmdb-detail
+				%p.tmdb-title
+					= tmdb_mv.title
+				%p.tmdb-rl-date
+					= tmdb_mv.release_date
+				%p.tmdb-description
+					= tmdb_mv.overview
+				= form_tag movies_createfromtmdb_path, :method => :post do
+					%p.tmdb-add-in-db
+						%input{:type=>"hidden",:name=>'tmdb_id', :value=>tmdb_mv.id ,}
+						= submit_tag 'Add this movie'

@@ -1,0 +1,17 @@
+%h2 Your review of #{@movie.title}
+
+%ul#details
+  %li
+    My Review:
+    - if @status == false
+      %br
+      = link_to 'Create Review', new_movie_review_path(@movie)
+
+    - elsif @status == true
+      = @review_current_user.potatoes
+      %br
+        = link_to 'Edit my review', edit_movie_review_path(@movie, @review_current_user)
+
+
+= link_to "Back to movie's details", movie_path(@movie)
+
